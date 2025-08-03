@@ -1,0 +1,302 @@
+:root {
+  --bg-color: #ffffff;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-color);
+  transition: background-color 0.3s ease;
+  overflow-x: hidden; /* обмежуємо тільки горизонтальне */
+ }
+
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;  /* <- дозволить скролити поверх канвасу */
+  z-index: 0;
+}
+
+button#toggle-theme {
+  position: absolute;
+  z-index: 10;
+  top: 20px;
+  right: 20px;
+  background-color: #eeeeee;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode {
+  --bg-color: #111111;
+}
+
+.dark-mode button#toggle-theme {
+  background-color: #333333;
+  color: white;
+}
+
+ .hero {
+   min-height: 100vh;
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   color: #222;
+   z-index: 5;
+   position: relative;
+   padding: 0 20px;
+ }
+
+.dark-mode .hero {
+  color: #eee;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin: 0;
+}
+
+.hero h2 {
+  font-size: 1.5rem;
+  margin: 0;
+  opacity: 0.7;
+}
+
+.hero p {
+  margin-top: 1rem;
+  font-size: 1rem;
+  opacity: 0.6;
+}
+
+.hero button {
+  margin-top: 2rem;
+  padding: 10px 20px;
+  font-size: 1rem;
+  background-color: #3399ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.hero button:hover {
+  background-color: #1f7dd6;
+}
+
+.hero-container {
+  display: flex;
+  min-height: 100vh;
+  padding: 50px;
+  box-sizing: border-box;
+  color: #222;
+  position: relative;
+  z-index: 5;
+}
+
+.dark-mode .hero-container {
+  color: #eee;
+}
+
+.hero-left {
+  width: 33%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.hero-left img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-top: 20px;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+.hero-right {
+  width: 67%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-content {
+  max-width: 500px;
+  text-align: left;
+}
+
+.hero-content h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.hero-text ul {
+  padding-left: 1.2rem;
+}
+
+.hero-nav {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.hero-nav button {
+  background: transparent;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  color: inherit;
+  transition: transform 0.2s ease;
+}
+
+.hero-nav button:hover {
+  transform: scale(1.2);
+}
+
+
+.projects {
+  padding: 100px 20px;
+  background: rgba(255, 255, 255, 0.9);
+  text-align: center;
+}
+
+.dark-mode .projects {
+  background: rgba(17, 17, 17, 0.9);
+}
+
+.projects h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.project-card {
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, opacity 0.6s ease;
+  transform-style: preserve-3d;
+  opacity: 0;
+  transform: translateY(20px) scale(0.95);
+}
+
+.project-card.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.dark-mode .project-card {
+  background: #222;
+  color: white;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) rotateX(3deg) rotateY(3deg);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+.workflow {
+  padding: 100px 20px;
+  text-align: center;
+  position: relative;
+  background: rgba(240, 240, 240, 0.9);
+}
+
+.dark-mode .workflow {
+  background: rgba(30, 30, 30, 0.9);
+}
+
+.workflow h2 {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.workflow-steps {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.workflow-step {
+  position: relative;
+  padding-left: 60px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.workflow-step.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.workflow-step .circle {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background-color: #3399ff;
+  color: white;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.workflow-step h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.workflow-step p {
+  margin: 0.5rem 0 0;
+  opacity: 0.7;
+}
+.dark-mode .workflow {
+  background: rgba(30, 30, 30, 0.9);
+  color: #eee;
+}
+
+.dark-mode .workflow-step .circle {
+  background-color: #555;
+  color: #fff;
+}
+
+.workflow-step .circle:hover {
+  background-color: #3399ff;
+  transition: background-color 0.3s ease;
+}
+
+.dark-mode .workflow-step p {
+  opacity: 0.8;
+  color: #ccc;
+}
+
+.dark-mode .workflow-step h3 {
+  color: #fff;
+}
