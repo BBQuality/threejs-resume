@@ -6,8 +6,9 @@ export function createHeroSection() {
 
   container.innerHTML = `
     <div class="hero-left">
-      <h1>Богдан</h1>
-      <img src="your-photo.jpg" alt="Фото Богдана">
+      
+      <img src="../../public/devFoto.webp" alt="Фото розробника Ялі Богдана">
+      <h1>Ялі Богдан</h1>
     </div>
     <div class="hero-right">
       <div class="hero-content">

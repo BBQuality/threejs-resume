@@ -3,6 +3,8 @@ import { setupThemeToggle } from './theme';
 import { createHeroSection } from './components/HeroSection';
 import { createProjectsSection } from './components/ProjectsSection';
 import { createWorkflowSection } from './components/WorkflowSection.ts';
+import { createSkillsSection } from './components/SkillsSection';
+import { createRoadmapSection } from './components/RoadmapSection';
 import { observeProjectCards } from './utils/scrollObserver';
 import { observeWorkflowSteps } from './utils/scrollObserver';
 
@@ -15,3 +17,5 @@ createProjectsSection();
 observeProjectCards();
 createWorkflowSection();
 observeWorkflowSteps();
+createSkillsSection();
+createRoadmapSection();

@@ -43,18 +43,18 @@ button#toggle-theme {
   color: white;
 }
 
- .hero {
-   min-height: 100vh;
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
-   text-align: center;
-   color: #222;
-   z-index: 5;
-   position: relative;
-   padding: 0 20px;
- }
+.hero {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #222;
+  z-index: 5;
+  position: relative;
+  padding: 0 20px;
+}
 
 .dark-mode .hero {
   color: #eee;
@@ -299,4 +299,170 @@ button#toggle-theme {
 
 .dark-mode .workflow-step h3 {
   color: #fff;
+}
+
+.skills {
+  padding: 100px 20px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+.dark-mode .skills {
+  background: rgba(17, 17, 17, 0.9);
+  color: #eee;
+}
+
+.skills h2 {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.skills-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.skill-card {
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  padding-top: 100%; /* квадратна форма */
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+
+.skill-card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 10px;
+}
+
+.card-front {
+  background: white;
+}
+
+.dark-mode .card-front {
+  background: #222;
+  color: #eee;
+}
+
+.card-back {
+  background: #3399ff;
+  color: white;
+  transform: rotateY(180deg);
+  text-align: center;
+}
+
+.skill-card img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.roadmap {
+  padding: 100px 20px;
+  text-align: center;
+  background: rgba(240, 240, 240, 0.9);
+}
+
+.dark-mode .roadmap {
+  background: rgba(30, 30, 30, 0.9);
+  color: #eee;
+}
+
+.roadmap h2 {
+  font-size: 2rem;
+  margin-bottom: 3rem;
+}
+
+.roadmap-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.roadmap-card {
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.card-inner {
+  position: relative;
+  width: 100%;
+  padding-top: 120%;
+  transform-style: preserve-3d;
+  transition: transform 0.8s;
+}
+
+.roadmap-card.flipped .card-inner {
+  transform: rotateY(180deg);
+}
+
+.card-front, .card-back {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  padding: 20px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+.card-front {
+  background: white;
+}
+
+.dark-mode .card-front {
+  background: #222;
+  color: #eee;
+}
+
+.card-back {
+  background: #3399ff;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.roadmap-card h3 {
+  margin-bottom: 10px;
+  font-size: 1.4rem;
+}
+
+.roadmap-card h4 {
+  margin-bottom: 10px;
+}
+
+.roadmap-card ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.roadmap-card li {
+  margin-bottom: 6px;
 }
