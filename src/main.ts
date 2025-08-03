@@ -5,6 +5,7 @@ import { createProjectsSection } from './components/ProjectsSection';
 import { createWorkflowSection } from './components/WorkflowSection.ts';
 import { createSkillsSection } from './components/SkillsSection';
 import { createRoadmapSection } from './components/RoadmapSection';
+import { createContactForm } from './components/ContactForm.ts';
 import { observeProjectCards } from './utils/scrollObserver';
 import { observeWorkflowSteps } from './utils/scrollObserver';
 
@@ -19,3 +20,4 @@ createWorkflowSection();
 observeWorkflowSteps();
 createSkillsSection();
 createRoadmapSection();
+createContactForm();

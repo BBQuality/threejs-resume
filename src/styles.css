@@ -466,3 +466,58 @@ button#toggle-theme {
 .roadmap-card li {
   margin-bottom: 6px;
 }
+
+.contact {
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.contact form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+.contact input, .contact textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.contact button {
+  padding: 10px 20px;
+  background: #3399ff;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.contact button:hover {
+  background: #1f7dd6;
+}
+
+.contact p {
+  margin-top: 10px;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+.dark-mode .contact {
+  background: rgba(17, 17, 17, 0.9);
+  color: #eee;
+}
+
+.dark-mode .contact input, .dark-mode .contact textarea {
+  background: #222;
+  color: white;
+  border-color: #555;
+}
+
+.dark-mode .contact button {
+  background: #555;
+}
